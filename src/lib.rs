@@ -251,6 +251,7 @@ macro_rules! impl_nonzeroable {
             /// Converts the wrapped value to its non-zero equivalent.
             /// # Safety
             /// The wrapped value must be non-zero.
+            #[inline(always)]
             pub const unsafe fn into_nonzero(self) -> $nonzero_type {
                 <$nonzero_type>::new_unchecked(self.0)
             }
